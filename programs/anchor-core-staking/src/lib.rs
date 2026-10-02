@@ -11,7 +11,7 @@ pub use constants::*;
 pub use instructions::*;
 pub use state::*;
 
-declare_id!("FkP21JjeMc9gcq9iBQBHfLocaLsxCYGLg4jgwin6pBwG");
+declare_id!("BwtKg1vHYJAAASsUDtmmXevenYsFb9Xazqnzj1e4t1wd");
 
 #[program]
 pub mod anchor_core_staking {
@@ -47,5 +47,9 @@ pub mod anchor_core_staking {
 
     pub fn claim_rewards(ctx: Context<ClaimRewards>) -> Result<()> {
         claim_rewards::handler(ctx)
+    }
+
+    pub fn burn_staked_nft(ctx: Context<BurnStaked>) -> Result<()> {
+        burn_staked_nft::handler(ctx)
     }
 }
